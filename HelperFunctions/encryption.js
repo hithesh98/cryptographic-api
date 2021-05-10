@@ -15,7 +15,7 @@ const decrypt = (ciphertext, symmetricKey) => {
     return decrypted.toString('utf-8')
 }
 
-// detect encrypted string in an object and decrypts them
+// detect encrypted strings in an object and decrypts them
 const objDecryption = (obj, symmetricKey) => {
     let plaintextObj = {};
     for(const [key, value] of Object.entries(obj)){
