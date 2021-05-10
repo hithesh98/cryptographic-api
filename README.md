@@ -5,7 +5,7 @@ This API allows you to perform basic cryptographic functions.
 ## Execution
 Endpoints are exposed at the URL: [https://cryptographic-api.herokuapp.com/](https://cryptographic-api.herokuapp.com/)
 
-Alternatively, the program can be run locally. To start the application, clone the repo and type the following command:
+Alternatively, the program can be run locally. To start the application, clone the repo and type the following commands:
 ```javascript
     npm install
     npm start
