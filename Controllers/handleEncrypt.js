@@ -1,4 +1,4 @@
-const {encrypt} = require('../HelperFunctions/encryption')
+const {encrypt} = require('../HelperFunctions/encryption');
 
 const handleEncrypt = (symmetricKey) => (req, res) => {
     let cipherObj = {};

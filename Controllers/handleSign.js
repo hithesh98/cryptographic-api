@@ -6,7 +6,7 @@ const handleSign = (symmetricKey, privateKey) => (req, res) => {
     const signature = crypto.sign('sha256', Buffer.from(plaintext), {
         key: privateKey,
         padding: crypto.constants.RSA_PKCS1_PSS_PADDING,
-    }).toString('base64')
+    }).toString('base64');
     res.status(200).send(JSON.stringify(signature))
 }
 

@@ -13,7 +13,6 @@ let publicKey;
 let privateKey;
 let symmetricKey;
 
-
 // Key generated on first start and read in on subsequent startups 
 if(!fs.existsSync('./Keys/public.pem') || !fs.existsSync('./Keys/private.pem') || !fs.existsSync('./Keys/symmetricKey.key')){
     const keys = generateKeys();

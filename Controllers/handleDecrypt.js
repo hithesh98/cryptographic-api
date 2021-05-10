@@ -1,4 +1,4 @@
-const {objDecryption} = require('../HelperFunctions/encryption')
+const {objDecryption} = require('../HelperFunctions/encryption');
 
 const handleDecrypt = (symmetricKey) => (req, res) => {
     let plaintextObj = objDecryption(req.body, symmetricKey);

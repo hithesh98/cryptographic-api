@@ -30,4 +30,4 @@ Takes a JSON payload of the form :
         "data": {...}
     }
 ```
-The data can be any JSON object and can contain encrypted fields. Any encrypted fields in the data will be decrypted before computing its signature. If this signature matches the given signature the response will be 204, else 400. 
+The data can be any JSON object and can contain encrypted fields. Any encrypted fields in the data will be decrypted before computing it's signature. If this signature matches the given signature the response will be 204, else 400. 
