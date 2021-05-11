@@ -9,9 +9,9 @@ const handleVerify = (symmetricKey, publicKey) => (req, res) => {
         padding: crypto.constants.RSA_PKCS1_PSS_PADDING,
     }, Buffer.from(signature, 'base64'));
     if(isVerified){
-        res.status(204).send()
+        res.status(204).end()
     } else {
-        res.status(400).send()
+        res.status(400).end()
     };
 }
 module.exports = handleVerify;

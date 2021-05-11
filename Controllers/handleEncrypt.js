@@ -5,7 +5,7 @@ const handleEncrypt = (symmetricKey) => (req, res) => {
     for(const [key, value] of Object.entries(req.body)){
         cipherObj[key] = encrypt(value, symmetricKey)
     }
-    return res.status(200).send(cipherObj)
+    return res.status(200).json(cipherObj)
 }
 
 module.exports = handleEncrypt;

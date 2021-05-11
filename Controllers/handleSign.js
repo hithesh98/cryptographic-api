@@ -7,7 +7,8 @@ const handleSign = (symmetricKey, privateKey) => (req, res) => {
         key: privateKey,
         padding: crypto.constants.RSA_PKCS1_PSS_PADDING,
     }).toString('base64');
-    res.status(200).send(JSON.stringify(signature))
+    const response = {"signature": JSON.stringify(signature)}
+    res.status(200).json(response)
 }
 
 module.exports = handleSign;
