@@ -29,7 +29,7 @@ app.use(express.json())
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`))
 
-app.get('/', (req, res) => {res.send('Cryptographic-API')})
+app.get('/', (req, res) => {fs.createReadStream('./readme.html').pipe(res)})
 app.post('/encrypt', handleEncrypt(symmetricKey));
 app.post('/decrypt', handleDecrypt(symmetricKey)); 
 app.post('/sign', handleSign(symmetricKey, privateKey));

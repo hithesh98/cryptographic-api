@@ -1,0 +1,24 @@
+<h1 id="cryptographic-restful-api">Cryptographic RESTful API</h1>
+<p>This API allows you to perform basic cryptographic functions.</p>
+<h2 id="execution">Execution</h2>
+<p>Endpoints are exposed at the URL: <a href="https://cryptographic-api.herokuapp.com/">https://cryptographic-api.herokuapp.com/</a></p>
+<p>Alternatively, the program can be run locally. To start the application, clone the repo and type the following commands:</p>
+<pre><code class="lang-javascript">    <span class="hljs-built_in">npm</span> install
+    <span class="hljs-built_in">npm</span> start
+</code></pre>
+<h2 id="reference">Reference</h2>
+<p>This API exposes four endpoints.</p>
+<h4 id="-post-encrypt"><strong>POST</strong> /encrypt</h4>
+<p>Takes a JSON payload and encrypts every value in the object at a depth of 1. The encrypted message is sent back in JSON response.</p>
+<h4 id="-post-decrypt"><strong>POST</strong> /decrypt</h4>
+<p>Takes a JSON payload, detects encrypted strings and decrypts them. The encrypted message is sent back in JSON response.</p>
+<h4 id="-post-sign"><strong>POST</strong> /sign</h4>
+<p>Takes a JSON payload and computes a cryptographic signature for the plaintext payload. The signature is then sent in JSON response.</p>
+<h4 id="-post-verify"><strong>POST</strong> /verify</h4>
+<p>Takes a JSON payload of the form :</p>
+<pre><code class="lang-javascript">    {
+        <span class="hljs-string">"signature"</span>: &lt;<span class="hljs-type">COMPUTED_SIGNATURE</span>&gt;,
+        <span class="hljs-string">"data"</span>: <span class="hljs-meta">{...}</span>
+    }
+</code></pre>
+<p>The data can be any JSON object and can contain encrypted fields. Any encrypted fields in the data will be decrypted before computing it&#39;s signature. If this signature matches the given signature the response will be 204, else 400. </p>
